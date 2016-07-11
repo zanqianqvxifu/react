@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+	<div id="exp"></div>
+</body>
+<script type="text/babel">
+	var Text = React.createClass({
+		// data = [{id:'aa',name:'bb',data:'asdasd'}],
+		getDefaultProps:function () {
+			return {
+				value:'123123',
+				backgrund:'red'
+			}
+		},
+		getInitialState:function () {
+			return {
+				flag:true,
+				data:data
+			}
+		},
+		change:function () {
+			this.setState({flag:!this.state.flag});
+			// comnsole.log();
+		},
+		render:function (){
+			var test = this.state.flag?'123':'456';
+			return(
+				<p onClick={this.change} style={{background:this.props.backgrund}}>
+					clikc me and change as {test}
+				</p>
+			);
+		}
+	});
+	ReactDOM.render(<Text/>,document.getElementById('exp'));
+
+
+
+</script>
+</html>
